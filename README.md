@@ -8,4 +8,13 @@ This project provide the ADOxx library necessary to model and develop Cross-plat
 - The ADOScript required to export the information in JSON, XML or CSV files;
 - a demo model in adl format containing some pre-created files with the required information.
 
-More informations are available in the wiki
+More informations are available in the wiki.
+
+## Summary
+
+In this section our approach is presented.
+The X-IoT approach is a model-driven approach that can foster the development of cross-platform IoT applications, solving the issues caused by adopting different IoT platforms.
+
+Our approach introduces a Domain-Specific Modelling Language (DSML) which development is guided by the Agile Modelling Method Engineering (AMME) approach.
+
+![rect915](https://user-images.githubusercontent.com/92312776/136811237-f13d3fc3-1c80-46d1-9a96-f649b48a7a34.png)
