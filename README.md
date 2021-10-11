@@ -1,3 +1,3 @@
 # X-IoT
 
-This project contain the Knowledge Base for the X-IoT approach.
+This project contains the main elements for the X-IoT approach.
