@@ -13,7 +13,7 @@ More informations are available in the wiki.
 ## Summary
 
 In this section our approach is presented.
-The X-IoT approach is a model-driven approach that can foster the development of cross-platform IoT applications, solving the issues caused by adopting different IoT platforms.
+X-IoT (read as cross-IoT) is a novel model-driven approach that uses a high level of abstraction to realise Cross-Platform IoT applications, solving the issues caused by adopting different IoT platforms.
 
 Our approach introduces a Domain-Specific Modelling Language (DSML) which development is guided by the Agile Modelling Method Engineering (AMME) approach.
 
