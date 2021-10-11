@@ -1,4 +1,4 @@
-# X-IoT
+# The X-IoT Approach
 
 This project provide the ADOxx library necessary to model and develop Cross-platform IoT Applications, following the X-IoT approach.
 
@@ -10,7 +10,7 @@ This project provide the ADOxx library necessary to model and develop Cross-plat
 
 More informations are available in the wiki.
 
-## Summary
+## Overview
 
 In this section our approach is presented.
 X-IoT (read as cross-IoT) is a novel model-driven approach that uses a high level of abstraction to realise Cross-Platform IoT applications, solving the issues caused by adopting different IoT platforms.
