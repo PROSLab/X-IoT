@@ -16,8 +16,10 @@ After installiing the platform, is possible to directly import the provided libr
 - Open the ADoxx Development Enviroment
 - Select the Import migration assistant button
 - Select Library import
-- Import the desired library inside the environment
--  
+- Import the desired library inside the development environment
+-  Import the demo models inside the modelling environment
+
+
 ## Overview
 
 In this section our approach is presented.
