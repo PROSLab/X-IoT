@@ -1,0 +1,560 @@
+{
+   "device": {
+      "element_reference": "device",
+      "specs": {
+         "device group id": {
+            "type": "String",
+            "description": "Azure device group id"
+         }
+      },
+      "api": {
+         "add_device": {
+            "path": "api/devices/[deviceId]?api-version=2022-07-31",
+            "type": "PUT",
+            "return": "JSON"
+         },
+         "get_device": {
+            "path": "api/devices/[deviceId]?api-version=2022-07-31",
+            "type": "GET",
+            "return": "JSON"
+         },
+         "get_devices": {
+            "path": "api/devices?api-version=2022-07-31",
+            "type": "GET",
+            "return": "JSON"
+         }
+      }
+   },
+   "device_template": {
+      "api": {
+         "add_device_template": {
+            "path": "api/deviceTemplates/[deviceTemplateId]?api-version=2022-07-31",
+            "type": "PUT",
+            "return": "JSON"
+         },
+         "get_device_template": {
+            "path": "api/deviceTemplates/[deviceTemplateId]?api-version=2022-07-31",
+            "type": "GET",
+            "return": "JSON"
+         },
+         "get_devices_templates": {
+            "path": "api/deviceTemplates?api-version=2022-07-31",
+            "type": "GET",
+            "return": "JSON"
+         }
+      }
+   },
+   "device_group": {
+      "api": {
+         "add_device_group": {
+            "path": "api/deviceGroups/[deviceGroupId]?api-version=2022-07-31",
+            "type": "PUT",
+            "return": "JSON"
+         },
+         "get_device_group": {
+            "path": "api/deviceGroups/[deviceGroupId]?api-version=2022-07-31",
+            "type": "GET",
+            "return": "JSON"
+         },
+         "get_device_groups": {
+            "path": "api/deviceGroups?api-version=2022-07-31",
+            "type": "GET",
+            "return": "JSON"
+         }
+      }
+   },
+   "service": {
+      "element_reference": "device_profile",
+      "specs": {
+         "Primary Key": {
+            "type": "String",
+            "description": "Primary key"
+         },
+         "Secondary Key": {
+            "type": "String",
+            "description": "Secondary key"
+         }
+      },
+      "api": {
+         "create_device_profile": {
+            "path": "api/deviceProfile",
+            "type": "POST",
+            "return": "JSON"
+         },
+         "get_device_profile": {
+            "path": "api/deviceProfile/[deviceProfileId]",
+            "type": "GET",
+            "return": "JSON"
+         },
+         "get_default_device_profile": {
+            "path": "api/deviceProfileInfo/default",
+            "type": "GET",
+            "return": "JSON"
+         }
+      }
+   },
+   "attribute": [
+      {
+         "Humidity": {
+            "specs": {}
+         },
+         "Temperature": {
+            "specs": {
+               "Unit": {
+                  "type": "String",
+                  "description": "kelvin, degreeCelsius or degreeFahrenheit"
+               }
+            }
+         },
+         "Distance": {
+            "specs": {
+               "Maximum": {
+                  "type": "Double",
+                  "description": "meters detectable"
+               }
+            }
+         },
+         "Acceleration": {
+            "specs": {
+               "Maximum": {
+                  "type": "Double",
+                  "description": "m/second squared detectable"
+               }
+            }
+         },
+         "Pressure": {
+            "specs": {
+               "Unit": {
+                  "type": "String",
+                  "description": "bar / millibar / pascal / kilopascal"
+               }
+            }
+         },
+         "Area": {
+            "specs": {
+               "Unit": {
+                  "type": "String",
+                  "description": "squareMetre / squareCentimetre / squareMillimetre / squareKilometer / acre / hectare"
+               }
+            }
+         },
+         "Mass": {
+            "specs": {
+               "Unit": {
+                  "type": "String",
+                  "description": "kilogram / gram / milligram /microgram"
+               }
+            }
+         },
+         "Force": {
+            "specs": {
+               "Unit": {
+                  "type": "String",
+                  "description": "newton / pound / ounce / ton"
+               }
+            }
+         }
+      }
+   ],
+   "system": {
+      "element_reference": "asset",
+      "api": {
+         "get_asset_types": {
+            "path": "api/asset/types",
+            "type": "GET",
+            "return": "JSON"
+         },
+         "get_assets_of_type": {
+            "path": "api/tenant/assets?type=[objectType]&pageSize=9999&page=0",
+            "type": "GET",
+            "return": "JSON"
+         },
+         "get_asset": {
+            "path": "api/asset/[assetId]",
+            "type": "GET",
+            "return": "JSON"
+         },
+         "create_asset": {
+            "path": "api/asset",
+            "type": "POST",
+            "return": "JSON"
+         }
+      }
+   },
+   "dashboard": {
+      "element_reference": "asset",
+      "api": {
+         "get_dashboard": {
+            "path": "api/dashboards/[dashboardId]?api-version=2022-10-31-preview",
+            "type": "GET",
+            "return": "JSON"
+         },
+         "get_dashboards": {
+            "path": "api/dashboards?api-version=2022-10-31-preview",
+            "type": "GET",
+            "return": "JSON"
+         },
+         "add_dashboard": {
+            "path": " api/dashboards/[dashboardId]?api-version=2022-10-31-preview",
+            "type": "PUT",
+            "return": "JSON"
+         }
+      }
+   },
+   "widget": [
+      {
+         "Last Known Value (lkv)": {
+            "config": {
+               "displayName": "Root System Dashboard",
+               "tiles": [
+                  {
+                     "displayName": "Device - Widget (Last Known Value)",
+                     "configuration": {
+                        "type": "lkv",
+                        "capabilities": [
+                           {
+                              "capability": "EnlightmentFunctionality",
+                              "aggregateFunction": "avg"
+                           }
+                        ],
+                        "group": "b514a79f-1c9d-4647-9adf-d8953ca4f91a",
+                        "devices": [
+                           "2cjxx3vw5wy"
+                        ],
+                        "format": {
+                           "textSize": 14
+                        },
+                        "queryRange": {
+                           "type": "time",
+                           "duration": "PT30M",
+                           "resolution": "PT1M"
+                        }
+                     },
+                     "x": 0,
+                     "y": 0,
+                     "width": 2,
+                     "height": 2
+                  },
+                  {
+                     "displayName": "Documentation",
+                     "configuration": {
+                        "type": "markdown",
+                        "description": "Comprehensive help articles and links to more support.",
+                        "href": "https://aka.ms/iotcentral-pnp-docs",
+                        "image": "4d6c6373-0220-4191-be2e-d58ca2a289e1",
+                        "queryRange": {
+                           "type": "time",
+                           "duration": "PT30M",
+                           "resolution": "PT1M"
+                        }
+                     },
+                     "x": 2,
+                     "y": 0,
+                     "width": 1,
+                     "height": 1
+                  }
+               ]
+            }
+         },
+         "Line Chart": {
+            "config": {
+               "displayName": "Root System Dashboard",
+               "tiles": [
+                  {
+                     "displayName": "Device - Widget (Line chart)",
+                     "configuration": {
+                        "type": "lineChart",
+                        "capabilities": [
+                           {
+                              "capability": "EnlightmentFunctionality",
+                              "aggregateFunction": "avg"
+                           }
+                        ],
+                        "group": "b514a79f-1c9d-4647-9adf-d8953ca4f91a",
+                        "devices": [
+                           "2cjxx3vw5wy"
+                        ],
+                        "format": {
+                           "textSize": 14
+                        },
+                        "queryRange": {
+                           "type": "time",
+                           "duration": "PT30M",
+                           "resolution": "PT1M"
+                        }
+                     },
+                     "x": 0,
+                     "y": 0,
+                     "width": 2,
+                     "height": 2
+                  },
+                  {
+                     "displayName": "Documentation",
+                     "configuration": {
+                        "type": "markdown",
+                        "description": "Comprehensive help articles and links to more support.",
+                        "href": "https://aka.ms/iotcentral-pnp-docs",
+                        "image": "4d6c6373-0220-4191-be2e-d58ca2a289e1"
+                     },
+                     "x": 2,
+                     "y": 0,
+                     "width": 1,
+                     "height": 1
+                  }
+               ]
+            }
+         },
+         "Map (property)": {
+            "config": {
+               "displayName": "Dashboard",
+               "tiles": [
+                  {
+                     "displayName": "Device - Widget Map (property)",
+                     "configuration": {
+                        "type": "mapProperty",
+                        "capabilities": [
+                           {
+                              "capability": "locationProperty",
+                              "aggregateFunction": "avg"
+                           }
+                        ],
+                        "group": "b514a79f-1c9d-4647-9adf-d8953ca4f91a",
+                        "devices": [
+                           "2cjxx3vw5wy"
+                        ],
+                        "format": {
+                           "zoomLevel": 4
+                        }
+                     },
+                     "x": 0,
+                     "y": 0,
+                     "width": 2,
+                     "height": 2
+                  },
+                  {
+                     "displayName": "Documentation",
+                     "configuration": {
+                        "type": "markdown",
+                        "description": "Comprehensive help articles and links to more support.",
+                        "href": "https://aka.ms/iotcentral-pnp-docs",
+                        "image": "4d6c6373-0220-4191-be2e-d58ca2a289e1"
+                     },
+                     "x": 2,
+                     "y": 0,
+                     "width": 1,
+                     "height": 1
+                  }
+               ]
+            }
+         }
+      }
+   ],
+   "request_out": [
+      {
+         "GET": {
+            "specs": {
+               "URI": {
+                  "type": "String",
+                  "description": "Destination url"
+               },
+               "header_Key": {
+                  "type": "String",
+                  "description": "Key"
+               },
+               "header_Value": {
+                  "type": "String",
+                  "description": "Value"
+               },
+               "body": {
+                  "type": "String",
+                  "description": "Body"
+               },
+               "rule id": {
+                  "type": "String",
+                  "description": "Azure target rule id"
+               }
+            }
+         },
+         "PUT": {
+            "specs": {
+               "URI": {
+                  "type": "String",
+                  "description": "Destination url"
+               },
+               "header_Key": {
+                  "type": "String",
+                  "description": "Key"
+               },
+               "header_Value": {
+                  "type": "String",
+                  "description": "Value"
+               },
+               "body": {
+                  "type": "String",
+                  "description": "Body"
+               },
+               "rule id": {
+                  "type": "String",
+                  "description": "Azure target rule id"
+               }
+            }
+         },
+         "DELETE": {
+            "specs": {
+               "URI": {
+                  "type": "String",
+                  "description": "Destination url"
+               },
+               "header_Key": {
+                  "type": "String",
+                  "description": "Key"
+               },
+               "header_Value": {
+                  "type": "String",
+                  "description": "Value"
+               },
+               "body": {
+                  "type": "String",
+                  "description": "Body"
+               },
+               "rule id": {
+                  "type": "String",
+                  "description": "Azure target rule id"
+               }
+            }
+         },
+         "PATCH": {
+            "specs": {
+               "URI": {
+                  "type": "String",
+                  "description": "Destination url"
+               },
+               "header_Key": {
+                  "type": "String",
+                  "description": "Key"
+               },
+               "header_Value": {
+                  "type": "String",
+                  "description": "Value"
+               },
+               "body": {
+                  "type": "String",
+                  "description": "Body"
+               },
+               "rule id": {
+                  "type": "String",
+                  "description": "Azure target rule id"
+               }
+            }
+         },
+         "POST": {
+            "specs": {
+               "URI": {
+                  "type": "String",
+                  "description": "Destination url"
+               },
+               "header_Key": {
+                  "type": "String",
+                  "description": "Key"
+               },
+               "header_Value": {
+                  "type": "String",
+                  "description": "Value"
+               },
+               "body": {
+                  "type": "String",
+                  "description": "Body"
+               },
+               "rule id": {
+                  "type": "String",
+                  "description": "Azure target rule id"
+               }
+            }
+         }
+      }
+   ],
+   "pubsub_out": [
+      {
+         "Send message": {
+            "specs": {
+               "Session Id": {
+                  "type": "String",
+                  "description": "Session Id"
+               },
+               "Session properties": {
+                  "type": "String",
+                  "description": "'Run details' or 'None'"
+               },
+               "rule id": {
+                  "type": "String",
+                  "description": "Azure target rule id"
+               }
+            }
+         }
+      }
+   ],
+   "storage": [
+      {
+         "Create_or_update_a_device": {
+            "specs": {
+               "Device id": {
+                  "type": "String",
+                  "description": "Unique ID of the device"
+               },
+               "Display name": {
+                  "type": "String",
+                  "description": "Name should be same as the ID"
+               },
+               "rule id": {
+                  "type": "String",
+                  "description": "Azure target rule id"
+               }
+            }
+         },
+         "Insert_Document": {
+            "specs": {
+               "Collection name": {
+                  "type": "String",
+                  "Collection name": "collection name"
+               },
+               "Data source": {
+                  "type": "String",
+                  "description": "cluster name"
+               },
+               "Database": {
+                  "type": "String",
+                  "description": "DB name"
+               },
+               "Document": {
+                  "type": "String",
+                  "description": "ejson file"
+               },
+               "rule id": {
+                  "type": "String",
+                  "description": "Azure target rule id"
+               }
+            }
+         }
+      }
+   ],
+   "data_stream_out": [
+      {
+         "Run_a_device_command": {
+            "specs": {
+               "Device id": {
+                  "type": "String",
+                  "description": "target device id"
+               },
+               "Command name": {
+                  "type": "String",
+                  "description": "device command name"
+               },
+               "rule id": {
+                  "type": "String",
+                  "description": "Azure target rule id"
+               }
+            }
+         }
+      }
+   ]
+}
