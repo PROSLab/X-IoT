@@ -302,6 +302,7 @@
                     "type": "deviceId"
                 },
                 "output": [
+                    "Success"
                 ]
             }
         }
@@ -313,23 +314,14 @@
             "device_state_out": {
                 "config": {
                     "config": {
-                        "attrDataMethod": "individualFields",
-                        "attrInfos": [
-                        {
-                            "key": "",
-                            "valueTemplate": ""
-                        },
-                        {
-                            "key": "",
-                            "valueTemplate": ""
-                        }
-                        ],
-                        "deviceId": "6415972f9af3fc1a5fc78a57",
+                        "attrDataMethod": "payloadPath",
+                        "attrPayloadPath": "",
+                        "deviceId": "",
                         "deviceIdTemplateType": "stringTemplate",
                         "resultPath": "",
                         "timeSourceType": "payloadTime"
                     },
-                    "id": "3bGLGlwOjj",
+                    "id": "nDhNtq6VPJ",
                     "meta": {
                         "category": "output",
                         "description": "",
@@ -343,6 +335,7 @@
                     "type": "DeviceChangeStateNode"
                 },
                 "output": [
+                    "Success"
                 ]
             }
         }
@@ -1023,12 +1016,6 @@
     "widget": [
         {
             "line_chart": {
-                "specs": {
-                    "attribute": {
-                        "type": "String",
-                        "description": "Attribute name"
-                    }
-                },
                 "config": {
                     "applicationId": "~exportplaceholderid-application-demo-0~",
                     "blockType": "graph",
