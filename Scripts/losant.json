@@ -272,14 +272,14 @@
                     },
                     "outputIds": [],
                     "type": "ArrayNode"
-                  },
+                },
                 "output": [
-                    "False", "True"
+                    "False",
+                    "True"
                 ]
             }
         }
     ],
-
     "data_stream_in": [
         {
             "device_state": {
@@ -307,8 +307,6 @@
             }
         }
     ],
-
-
     "data_stream_out": [
         {
             "device_state_out": {
@@ -330,8 +328,7 @@
                         "x": 20,
                         "y": 20
                     },
-                    "outputIds": [
-                    ],
+                    "outputIds": [],
                     "type": "DeviceChangeStateNode"
                 },
                 "output": [
@@ -340,7 +337,6 @@
             }
         }
     ],
-
     "formatting": [
         {
             "mutate": {
@@ -421,7 +417,7 @@
                     "config": {
                         "method": "split",
                         "methodArgs": [
-                          "-"
+                            "-"
                         ],
                         "resultPath": "data.result",
                         "sourceData": "{{data.input}}"
@@ -541,7 +537,8 @@
                     "type": "ConditionalNode"
                 },
                 "output": [
-                    "False", "True"
+                    "False",
+                    "True"
                 ]
             },
             "switch": {
@@ -599,7 +596,8 @@
                     "type": "TimeRangeNode"
                 },
                 "output": [
-                    "False", "True"
+                    "False",
+                    "True"
                 ]
             },
             "validate_payload": {
@@ -633,7 +631,8 @@
                     "type": "ValidatePayloadNode"
                 },
                 "output": [
-                    "False", "True"
+                    "False",
+                    "True"
                 ]
             }
         }
@@ -924,7 +923,7 @@
                 "config": {
                     "config": {
                         "arguments": [
-                          "ff"
+                            "ff"
                         ],
                         "command": "get",
                         "dbNumber": "",
@@ -958,14 +957,14 @@
                         "errorBehavior": "throw",
                         "errorPath": "",
                         "mongoArgs": [
-                        {
-                            "value": "",
-                            "valueType": "json"
-                        },
-                        {
-                            "value": "",
-                            "valueType": "json"
-                        }
+                            {
+                                "value": "",
+                                "valueType": "json"
+                            },
+                            {
+                                "value": "",
+                                "valueType": "json"
+                            }
                         ],
                         "mongoMethod": "count",
                         "mongoUriTemplate": "m",
