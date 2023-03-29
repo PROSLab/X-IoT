@@ -285,6 +285,7 @@
             "device_state": {
                 "config": {
                     "config": {
+                        "attributeWhitelist": [],
                         "batchBehavior": "each",
                         "triggerOn": "both"
                     },
@@ -310,10 +311,16 @@
     "data_stream_out": [
         {
             "device_state_out": {
+                "specs": {
+                    "attrJsonTemplate": {
+                        "type": "String",
+                        "description": "message out to the device"
+                    }
+                },
                 "config": {
                     "config": {
-                        "attrDataMethod": "payloadPath",
-                        "attrPayloadPath": "",
+                        "attrDataMethod": "jsonTemplate",
+                        "attrJsonTemplate": "",
                         "deviceId": "",
                         "deviceIdTemplateType": "stringTemplate",
                         "resultPath": "",
